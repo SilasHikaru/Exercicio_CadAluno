@@ -1,0 +1,27 @@
+package exercícioJava;
+import java.util.Scanner;
+
+public class ChamadaAluno {
+
+	public static void main(String[] args) {
+		
+		Aluno aluno = new Aluno();
+		Scanner le = new Scanner(System.in);
+		
+		System.out.println("Informe o nome com sobrenome");
+		String nome = le.nextLine();
+		aluno.setNome(nome);
+		
+		System.out.println("Informe a n1");
+		Double n1 = le.nextDouble();
+		aluno.setN1(n1);
+		
+		System.out.println("Informe a n2");
+		Double n2 = le.nextDouble();
+		aluno.setN2(n2);
+		
+		System.out.println("Nome: " + aluno.getNome() + " Média: "+ aluno.getMedia());
+
+	}
+
+}

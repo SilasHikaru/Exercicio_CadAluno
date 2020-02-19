@@ -1,0 +1,84 @@
+package exercícioJava;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class ChamadaAluno {
+
+	public static void main(String[] args) {
+		
+		converte = null;
+		
+		Aluno aluno;
+		ArrayList<Aluno> lista = new ArrayList();
+		
+		Scanner le = new Scanner(System.in);
+		int resp = 0; 
+		String converte = null;
+		boolean sair = false;
+		
+		while(!sair) {
+			
+			aluno = new Aluno();
+			
+			System.out.println("\nDigite: \n "
+					          + " 1- Cadastrar aluno\n "
+					          + " 2- Listar alunos\n"
+					          + " 3- Remover alunos da lista\n"
+					          + " 4- Sair ");
+			
+				
+				converte = le.nextLine();
+				resp = Integer.parseInt(converte);
+				
+				if(resp == 1) {
+					
+					System.out.println("Informe o nome com sobrenome");
+					String nome = le.nextLine();
+					aluno.setNome(nome);
+					
+					System.out.println("Informe a n1");
+					Double n1 = le.nextDouble();
+					aluno.setN1(n1);
+					
+					System.out.println("Informe a n2");
+					Double n2 = le.nextDouble();
+					aluno.setN2(n2);
+					
+					lista.add(aluno);
+				}
+				else if (resp == 2) {
+					Lista(lista);			
+				}
+				else if(resp == 3) {
+					//listar
+					//selecionar o posicao da lista
+				}
+				else if (resp == 4) {
+					sair = true;
+				}
+				else {
+					System.out.println("Comando inválido");
+				}
+			
+			
+			
+			//System.out.println("Nome: " + aluno.getNome() + " Média: "+ aluno.getMedia());
+
+		}
+		
+	}
+	
+	public static void Lista (ArrayList a) {
+		int i = 0;
+		Iterator<Aluno> iterator = a.iterator();
+		while (iterator.hasNext()) {
+			System.out.println(iterator.hasNext());
+			i++;
+		}
+	}
+
+}
+
+

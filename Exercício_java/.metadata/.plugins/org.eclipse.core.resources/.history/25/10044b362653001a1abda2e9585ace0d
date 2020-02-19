@@ -1,0 +1,87 @@
+package exercícioJava;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class ChamadaAluno {
+
+	public static void main(String[] args) {
+		
+		
+		Aluno aluno;
+		ArrayList<Aluno> lista = new ArrayList();		
+		Scanner le;
+		String resp = null; 
+		String nota = null;
+		Double n1, n2;
+		
+		boolean sair = false;
+		
+		while(!sair) {
+			
+			
+			aluno = new Aluno();
+			le = new Scanner(System.in);
+			
+			System.out.println("\nDigite a letra correspondente a opção \n "
+					          + " A- Cadastrar aluno\n "
+					          + " B- Listar alunos\n"
+					          + " C- Remover alunos da lista\n"
+					          + " D- Sair ");
+			
+				
+				resp = le.nextLine();
+				
+				if(resp.equals("A")) {
+					
+					System.out.println("Informe o nome com sobrenome");
+					String nome = le.nextLine();
+					aluno.setNome(nome);
+					try {
+					System.out.println("Informe a n1");
+					nota = le.nextLine();
+				    n1 = Double.parseDouble(nota);
+					aluno.setN1(n1);
+					}
+					catch(Exception erro) {
+						System.out.println("Formato inválido, tente novamente");
+						nota = le.nextLine();
+						n1 = Double.parseDouble(nota);
+					}
+					System.out.println("Informe a n2");
+				    n2 = le.nextDouble();
+					aluno.setN2(n2);
+					
+					lista.add(aluno);
+				}
+				else if (resp.contentEquals("B")) {
+					for(int i = 0; i < lista.size();i++) {
+						System.out.println("Nome:" + lista.get(i).getNome() +" N1:"+ lista.get(i).getN1()
+								+ " N2:"+lista.get(i).getN2() +" Média:"+lista.get(i).getMedia() + "\n");
+					}			
+				}
+				else if(resp == "C") {
+					//listar
+					//selecionar o posicao da lista
+				}
+				else if (resp.equals("D")) {
+					sair = true;
+				}
+				else {
+					System.out.println("Comando inválido");
+				}
+			
+			
+			
+			//System.out.println("Nome: " + aluno.getNome() + " Média: "+ aluno.getMedia());
+
+		}
+		
+	}
+	
+	
+
+}
+
+
